@@ -9,39 +9,26 @@ OS: Linux
 4. `/data4` - Staging area for processing
 
 ## /DATA1
-`/data1/afsisdata/MODIS/Albedo_MCD43A3/`
-1. Albedo_BSA_vis - Black sky visible geotiff observations, 2000-2013
-2. Albedo_WSA_vis - White sky visible geotiff observations, 2000-2012.06.25
+##### `/data1/afsisdata/MODIS/Albedo_MCD43A3/`
+1. Raw Data
+  - Albedo_BSA_vis - Black sky visible geotiff observations, 2000-2013
+  - Albedo_WSA_vis - White sky visible geotiff observations, 2000-2012.06.25
+  - LAI_FPAR_MCD15A2  - Combined Leaf Area Index (LAI) and Fraction of Photosynthetically Active Radiation (FPAR) raw data files in hdf format downloaded from USGS
+  - LAI_FPAR_MOD15A2 - Terra Leaf Area Index (LAI) and Fraction of Photosynthetically Active Radiation (FPAR) raw data files in hdf format downloaded from USGS
+  - LCDynamics_MCD12Q2 - Combined Land Cover Dynamics raw data files in hdf format downloaded from USGS
+  - LCType_MCD12Q1 - Combined Land Cover Type raw data files in hdf format downloaded from USGS
+  - npp             
 
-LAI_FPAR_MCD15A2  - Combined Leaf Area Index (LAI) and Fraction of Photosynthetically Active Radiation (FPAR) raw data files in hdf format downloaded from USGS
-Temporal Coverage:
-Status:
-
-LAI_FPAR_MOD15A2 - Terra Leaf Area Index (LAI) and Fraction of Photosynthetically Active Radiation (FPAR) raw data files in hdf format downloaded from USGS
-Temporal Coverage: 
-Status:
-
-LCDynamics_MCD12Q2 - Combined Land Cover Dynamics raw data files in hdf format downloaded from USGS
-Temporal Coverage: 2001-2009
-Status:
-
-LCType_MCD12Q1 - Combined Land Cover Type raw data files in hdf format downloaded from USGS
-Temporal Coverage:
-Status:
-
-npp             
-Temporal Coverage:
-Status:
-
-EVI                    
-LstDay          
-LstNight        
-NDVI            
-reflectance_Blue
-reflectance_MIR
-reflectance_NIR 
-reflectance_Red    
-reproject_tifs_laea_geoserver2012
+2. Geoprocessed Outputs - contains archived and current outputs
+  - EVI                    
+  - LstDay          
+  - LstNight        
+  - NDVI            
+  - reflectance_Blue
+  - reflectance_MIR
+  - reflectance_NIR 
+  - reflectance_Red    
+  - reproject_tifs_laea_geoserver2012
 
 ## /DATA3
 **`/data4/ErosionMapping/TRMM/TRMMdailyAfrica/…`**
