@@ -11,25 +11,35 @@ OS: Linux
 ## /DATA1
 ##### `/data1/afsisdata/MODIS/...`
 1. Raw Data
-  1. **`Albedo_MCD43A3/`**
+  1. `Albedo_MCD43A3/...` - MODIS Combined Albedo
     - `Albedo_BSA_vis` - Black sky visible geotiff observations, 2000-2013
     - `Albedo_WSA_vis` - White sky visible geotiff observations, 2000-2012.06.25
-  2. LAI_FPAR_MCD15A2  - Combined Leaf Area Index (LAI) and Fraction of Photosynthetically Active Radiation (FPAR) raw data files in hdf format downloaded from USGS
-  3. LAI_FPAR_MOD15A2 - Terra Leaf Area Index (LAI) and Fraction of Photosynthetically Active Radiation (FPAR) raw data files in hdf format downloaded from USGS
-  4. LCDynamics_MCD12Q2 - Combined Land Cover Dynamics raw data files in hdf format downloaded from USGS
-  5. LCType_MCD12Q1 - Combined Land Cover Type raw data files in hdf format downloaded from USGS
-  6. npp             
+  2. `LAI_FPAR_MCD15A2`  - MODIS Combined Leaf Area Index (LAI) and Fraction of Photosynthetically Active Radiation (FPAR)
+  3. `LAI_FPAR_MOD15A2` - MODIS Terra Leaf Area Index (LAI) and Fraction of Photosynthetically Active Radiation (FPAR)
+  4. `LCDynamics_MCD12Q2` - MODIS Combined Land Cover Dynamics raw data files in hdf format downloaded from USGS
+  5. `LCType_MCD12Q1` - MODIS Combined Land Cover Type
+  6. `npp`             
 
 2. Geoprocessed Outputs - contains archived and current outputs
-  - EVI                    
-  - LstDay          
-  - LstNight        
-  - NDVI            
-  - reflectance_Blue
-  - reflectance_MIR
-  - reflectance_NIR 
-  - reflectance_Red    
-  - reproject_tifs_laea_geoserver2012
+  1. `EVI/`
+    - Latest: `EVI_200002_201403'   
+      - EVI_avgIRI_Jan2000_Mar2014_mosaicLAEA.tif - lambert azimuthal equal area projection, not clipped
+      - EVI_avgIRI_Jan2000_Mar2014_mosaicLAEA_x10000.tif - lambert azimuthal equal area projection, clipped and mulitplied by 10000
+      - EVI_avgIRI_Jan2000_Mar2014_mosaic.tif - sinusoidal projection, not clipped            
+  2. `LstDay/`
+    - Latest:          
+  3. `LstNight/`
+    - Latest:        
+  4. `NDVI/`  
+    - Latest:     
+  5. `reflectance_Blue/`
+    - Latest:
+  6. `reflectance_MIR/`
+    - Latest:
+  7. `reflectance_NIR/`
+    - Latest:
+  8. `reflectance_Red/` 
+    - Latest: 
 
 ## /DATA3
 **`/data4/ErosionMapping/TRMM/TRMMdailyAfrica/…`**
