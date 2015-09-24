@@ -1,4 +1,6 @@
 #!/bin/bash
+# clip_rasters.sh
+# written by: Kimberly Peng
 # Clips rasters for geographic and lambert azimuthal equal area geotiffs.
 
 #Sample Usage
