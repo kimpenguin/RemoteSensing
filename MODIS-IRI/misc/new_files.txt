@@ -1,0 +1,165 @@
+<layer layer_id="afsis:afsis-mid-infrared-reflectance" tif_file="/repository/afsis/services/afsis-mid-infrared-reflectance/afsis-mid-infrared-reflectance.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="MIR_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-red-infrared-reflectance" tif_file="/repository/afsis/services/afsis-red-infrared-reflectance/afsis-red-infrared-reflectance.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="red_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-blue-infrared-reflectance" tif_file="/repository/afsis/services/afsis-blue-infrared-reflectance/afsis-blue-infrared-reflectance.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="blue_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-near-infrared-reflectance" tif_file="/repository/afsis/services/afsis-near-infrared-reflectance/afsis-near-infrared-reflectance.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="NIR_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-normalized-difference-vegetation-index" tif_file="/repository/afsis/services/afsis-normalized-difference-vegetation-index/afsis-normalized-difference-vegetation-index.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="NDVI_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-enhanced-vegetation-index" tif_file="/repository/afsis/services/afsis-enhanced-vegetation-index/afsis-enhanced-vegetation-index.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="EVI_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-gross-primary-production" tif_file="/repository/afsis/services/afsis-gross-primary-production/afsis-gross-primary-production.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="GPP_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-net-primary-production" tif_file="/repository/afsis/services/afsis-net-primary-production/afsis-net-primary-production.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="NPP_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-land-surface-temperature-day" tif_file="/repository/afsis/services/afsis-land-surface-temperature-day/afsis-land-surface-temperature-day.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="LST_Day_readme_rev.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-land-surface-temperature-night" tif_file="/repository/afsis/services/afsis-land-surface-temperature-night/afsis-land-surface-temperature-night.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="LST_Night_readme_rev.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-fraction-of-photosynthetically-active-radiation" tif_file="/repository/afsis/services/afsis-fraction-of-photosynthetically-active-radiation/afsis-fraction-of-photosynthetically-active-radiation.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="fPAR_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-leaf-area-index" tif_file="/repository/afsis/services/afsis-leaf-area-index/afsis-leaf-area-index.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="LAI_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-landcover-type-2" tif_file="/repository/afsis/services/afsis-landcover-type-2/afsis-landcover-type-2.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="LandCoverType2_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-albedo-white-sky-nir" tif_file="/repository/afsis/services/afsis-albedo-white-sky-nir/afsis-albedo-white-sky-nir.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="WSAnir_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-CLYPPT-1km-sd1-M" tif_file="/repository/afsis/services/afsis-CLYPPT-1km-sd1-M/afsis-CLYPPT-1km-sd1-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_clay_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-CLYPPT-1km-sd2-M" tif_file="/repository/afsis/services/afsis-CLYPPT-1km-sd2-M/afsis-CLYPPT-1km-sd2-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_clay_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-CLYPPT-1km-sd3-M" tif_file="/repository/afsis/services/afsis-CLYPPT-1km-sd3-M/afsis-CLYPPT-1km-sd3-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_clay_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-CLYPPT-1km-sd4-M" tif_file="/repository/afsis/services/afsis-CLYPPT-1km-sd4-M/afsis-CLYPPT-1km-sd4-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_clay_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-CLYPPT-1km-sd5-M" tif_file="/repository/afsis/services/afsis-CLYPPT-1km-sd5-M/afsis-CLYPPT-1km-sd5-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_clay_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-CLYPPT-1km-sd6-M" tif_file="/repository/afsis/services/afsis-CLYPPT-1km-sd6-M/afsis-CLYPPT-1km-sd6-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_clay_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-SLTPPT-1km-sd1-M" tif_file="/repository/afsis/services/afsis-SLTPPT-1km-sd1-M/afsis-SLTPPT-1km-sd1-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_silt_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-SLTPPT-1km-sd2-M" tif_file="/repository/afsis/services/afsis-SLTPPT-1km-sd2-M/afsis-SLTPPT-1km-sd2-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_silt_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-SLTPPT-1km-sd3-M" tif_file="/repository/afsis/services/afsis-SLTPPT-1km-sd3-M/afsis-SLTPPT-1km-sd3-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_silt_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-SLTPPT-1km-sd4-M" tif_file="/repository/afsis/services/afsis-SLTPPT-1km-sd4-M/afsis-SLTPPT-1km-sd4-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_silt_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-SLTPPT-1km-sd5-M" tif_file="/repository/afsis/services/afsis-SLTPPT-1km-sd5-M/afsis-SLTPPT-1km-sd5-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_silt_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-SLTPPT-1km-sd6-M" tif_file="/repository/afsis/services/afsis-SLTPPT-1km-sd6-M/afsis-SLTPPT-1km-sd6-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_silt_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-SNDPPT-1km-sd1-M" tif_file="/repository/afsis/services/afsis-SNDPPT-1km-sd1-M/afsis-SNDPPT-1km-sd1-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_sand_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-SNDPPT-1km-sd2-M" tif_file="/repository/afsis/services/afsis-SNDPPT-1km-sd2-M/afsis-SNDPPT-1km-sd2-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_sand_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-SNDPPT-1km-sd3-M" tif_file="/repository/afsis/services/afsis-SNDPPT-1km-sd3-M/afsis-SNDPPT-1km-sd3-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_sand_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-SNDPPT-1km-sd4-M" tif_file="/repository/afsis/services/afsis-SNDPPT-1km-sd4-M/afsis-SNDPPT-1km-sd4-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_sand_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-SNDPPT-1km-sd5-M" tif_file="/repository/afsis/services/afsis-SNDPPT-1km-sd5-M/afsis-SNDPPT-1km-sd5-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_sand_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-SNDPPT-1km-sd6-M" tif_file="/repository/afsis/services/afsis-SNDPPT-1km-sd6-M/afsis-SNDPPT-1km-sd6-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_sand_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-BLD-1km-sd1-M" tif_file="/repository/afsis/services/afsis-BLD-1km-sd1-M/afsis-BLD-1km-sd1-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_bld_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-BLD-1km-sd2-M" tif_file="/repository/afsis/services/afsis-BLD-1km-sd2-M/afsis-BLD-1km-sd2-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_bld_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-BLD-1km-sd3-M" tif_file="/repository/afsis/services/afsis-BLD-1km-sd3-M/afsis-BLD-1km-sd3-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_bld_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-BLD-1km-sd4-M" tif_file="/repository/afsis/services/afsis-BLD-1km-sd4-M/afsis-BLD-1km-sd4-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_bld_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-BLD-1km-sd5-M" tif_file="/repository/afsis/services/afsis-BLD-1km-sd5-M/afsis-BLD-1km-sd5-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_bld_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-BLD-1km-sd6-M" tif_file="/repository/afsis/services/afsis-BLD-1km-sd6-M/afsis-BLD-1km-sd6-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_bld_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-ORCDRC-1km-sd1-M" tif_file="/repository/afsis/services/afsis-ORCDRC-1km-sd1-M/afsis-ORCDRC-1km-sd1-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_orcdrc_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-ORCDRC-1km-sd2-M" tif_file="/repository/afsis/services/afsis-ORCDRC-1km-sd2-M/afsis-ORCDRC-1km-sd2-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_orcdrc_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-ORCDRC-1km-sd3-M" tif_file="/repository/afsis/services/afsis-ORCDRC-1km-sd3-M/afsis-ORCDRC-1km-sd3-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_orcdrc_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-ORCDRC-1km-sd4-M" tif_file="/repository/afsis/services/afsis-ORCDRC-1km-sd4-M/afsis-ORCDRC-1km-sd4-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_orcdrc_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-ORCDRC-1km-sd5-M" tif_file="/repository/afsis/services/afsis-ORCDRC-1km-sd5-M/afsis-ORCDRC-1km-sd5-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_orcdrc_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-ORCDRC-1km-sd6-M" tif_file="/repository/afsis/services/afsis-ORCDRC-1km-sd6-M/afsis-ORCDRC-1km-sd6-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_orcdrc_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-PHIHO5-1km-sd1-M" tif_file="/repository/afsis/services/afsis-PHIHO5-1km-sd1-M/afsis-PHIHO5-1km-sd1-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_ph_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-PHIHO5-1km-sd2-M" tif_file="/repository/afsis/services/afsis-PHIHO5-1km-sd2-M/afsis-PHIHO5-1km-sd2-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_ph_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-PHIHO5-1km-sd3-M" tif_file="/repository/afsis/services/afsis-PHIHO5-1km-sd3-M/afsis-PHIHO5-1km-sd3-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_ph_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-PHIHO5-1km-sd4-M" tif_file="/repository/afsis/services/afsis-PHIHO5-1km-sd4-M/afsis-PHIHO5-1km-sd4-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_ph_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-PHIHO5-1km-sd5-M" tif_file="/repository/afsis/services/afsis-PHIHO5-1km-sd5-M/afsis-PHIHO5-1km-sd5-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_ph_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-PHIHO5-1km-sd6-M" tif_file="/repository/afsis/services/afsis-PHIHO5-1km-sd6-M/afsis-PHIHO5-1km-sd6-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_ph_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-CEC-1km-sd1-M" tif_file="/repository/afsis/services/afsis-CEC-1km-sd1-M/afsis-CEC-1km-sd1-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_cec_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-CEC-1km-sd2-M" tif_file="/repository/afsis/services/afsis-CEC-1km-sd2-M/afsis-CEC-1km-sd2-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_cec_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-CEC-1km-sd3-M" tif_file="/repository/afsis/services/afsis-CEC-1km-sd3-M/afsis-CEC-1km-sd3-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_cec_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-CEC-1km-sd4-M" tif_file="/repository/afsis/services/afsis-CEC-1km-sd4-M/afsis-CEC-1km-sd4-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_cec_readme.txt"/>
+</layer>
+<layer layer_id="afsis:afsis-CEC-1km-sd5-M" tif_file="/repository/afsis/services/afsis-CEC-1km-sd5-M/afsis-CEC-1km-sd5-M.tif" medafile_dir="/repository/afsis/docs">
+<metadata file_name="afsis_cec_readme.txt"/>
+</layer>
