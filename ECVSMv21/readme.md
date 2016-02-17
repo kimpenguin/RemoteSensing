@@ -3,7 +3,7 @@
 ### Scripts
 1. ecv_sm_monthly_avg_v21.sh </br>
 Creates a monthly average
-2. ecv_sm_annual_avg_v21.sh< /br>		
+2. ecv_sm_annual_avg_v21.sh </br>		
 Creates annual averages
 3. ecv_sm_time_series_avg_v21.sh</br>
 Creates time series average
