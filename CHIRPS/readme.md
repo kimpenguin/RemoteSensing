@@ -1,4 +1,4 @@
-# This directory contains the scripts to process the Climate Hazards Group InfraRed Precipitation with Station (CHIRPS) data for Africa.
+# This directory contains the scripts to process the Climate Hazards Group InfraRed Precipitation with Station (CHIRPS) data for Africa. The original data is in geographic projection.
 
 ## Scripts
 1. **get_chirps.sh** <br/>
