@@ -1,5 +1,10 @@
 #!/bin/bash
+#get_chirps_monthly.sh
+#Written by: Kimberly Peng
+#Date: December 2015
+#This script creates a monthly average of the CHIRPS data for the specified temporal range.
 
+#example command:
 #/data2/CHIRPS/scripts/get_chirps_monthly.sh /data2/CHIRPS/raws 1981 2015 geographic chirps
 
 #Parameters
@@ -51,12 +56,13 @@ g.version
 g.region n=40 s=-40 e=60 w=-20 res=0.05
 #####
 
+#####PROCESS MONTHLY AVERAGES
 #create output directory
 OutputDir=$InputDir/outputs
 mkdir $OutputDir
 months="01 02 03 04 05 06 07 08 09 10 11 12"
-# months="01"
 
+#loop through the months
 for eachMonth in $months
 do
 	echo current month is $eachMonth
@@ -75,8 +81,8 @@ do
 			# import each file in date list
 			echo importing $eachTif
 			newName=$(echo $eachTif | sed "s/.tif//")
-			# r.in.gdal input=$InputDir/$y/$eachTif output=$newName
-			# r.null map="$newName"@"$mapset" setnull=-9999 
+			r.in.gdal input=$InputDir/$y/$eachTif output=$newName
+			r.null map="$newName"@"$mapset" setnull=-9999 
 			monthList+=$eachTif" "
 		done
 		
@@ -85,11 +91,11 @@ do
 	# echo $monthList
 	rsMonthList=$(echo $monthList | sed "s/ /,/g;s/.tif/@"$mapset"/g")
 	echo $rsMonthList
-	#calculate export annual average
-	# r.series input=$rsMonthList output=CHIRPS_"$StartYear"_"$EndYear"_"$eachMonth" method=average
-	# r.out.gdal input=CHIRPS_"$StartYear"_"$EndYear"_"$eachMonth"@"$mapset" output=$OutputDir/CHIRPS_"$StartYear"_"$EndYear"_"$eachMonth".tif
-	# chmod 775 $OutputDir/CHIRPS_"$StartYear"_"$EndYear"_"$eachMonth".tif
+	#calculate export monthly average and export geotiff
+	r.series input=$rsMonthList output=CHIRPS_"$StartYear"_"$EndYear"_"$eachMonth" method=average
+	r.out.gdal input=CHIRPS_"$StartYear"_"$EndYear"_"$eachMonth"@"$mapset" output=$OutputDir/CHIRPS_"$StartYear"_"$EndYear"_"$eachMonth".tif
+	chmod 775 $OutputDir/CHIRPS_"$StartYear"_"$EndYear"_"$eachMonth".tif
 
-	#remove monthly rasters from mapset
-	# g.remove rast=$rsMonthList
+	remove monthly rasters from mapset
+	g.remove rast=$rsMonthList
 done
