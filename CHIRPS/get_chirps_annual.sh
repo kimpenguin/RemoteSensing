@@ -1,5 +1,8 @@
 #!/bin/bash
-
+#get_chirps_annual.sh
+#Written by: Kimberly Peng
+#Created: November 2015
+#This script creates annual and time series averages of the CHIRPS data for Africa.
 #/data2/CHIRPS/scripts/get_chirps_ts.sh /data2/CHIRPS/raws 1981 2015 geographic chirps
 
 #Parameters
@@ -51,7 +54,7 @@ g.version
 g.region n=40 s=-40 e=60 w=-20 res=0.05
 #####
 
-##### IMPORT AND ANNUAL
+##### IMPORT AND ANNUAL AVERAGES
 #change to the Input directory location
 cd $InputDir
 
@@ -59,6 +62,7 @@ cd $InputDir
 OutputDir=$InputDir/outputs
 mkdir $OutputDir
 
+#loops the years and creates an average
 y=$StartYear
 while [ $y -le $EndYear ]
 do
@@ -92,7 +96,7 @@ do
 	y=$((y+1))
 done
 #####
-##### TIME SERIES
+##### TIME SERIES AVERAGE
 # echo $tsList
 rsTsList=$(echo $tsList | sed "s/ /,/g;s/.tif/@"$mapset"/g")
 #calculate export annual average
