@@ -5,52 +5,29 @@
 # Download, processes, and mosaics for Africa.
 
 #Example:
-#/data4/afsisdata/IRI_MODIS/scripts/./get_data_IRI_MODIS250m.sh EVI 250m Feb 2000 Jun 2015 /data7/MODIS/EVI
+#/data4/afsisdata/IRI_MODIS/scripts/./get_data_IRI_MODIS250m.sh EVI Feb 2000 Jun 2015 /data7/MODIS/EVI sinusoidalSA modis
 
 #parameters are assigned to variables
 Dataset=$1
-Resolution=$2
-StartMonth=$3
-StartYear=$4
-EndMonth=$5
-EndYear=$6
-OutputDir=$7
-location=$8
-mapset=$9
+StartMonth=$2
+StartYear=$3
+EndMonth=$4
+EndYear=$5
+OutputDir=$6
+location=$7
+mapset=$8
 
 DatasetRes=250
 DatasetRow=4800
 DatasetCol=4800
 FileType=Float32
 
+cd $OutputDir
+InputDir=$OutputDir/r4
+mkdir $InputDir
+
 #assign the product name
 productName="$Dataset"_avgIRI_"$StartMonth""$StartYear"_"$EndMonth""$EndYear"
-
-#####Downloads binary files#####
-#arrays to loop through each of 64 tiles
-TileNum1=(2 3 4 5 6 7 8 9) 
-TileNum2=(2 3 4 5 6 7 8 9)
-#x and y centerpoints
-X=(-1667928 -555977.2 555973.2 1667924 2779874 3891824 5003775 6115725)
-Y=(3891828 2779877 1667927 555976.2 -555974.2 -1667925 -2779875 -3891826)
-time for eachTile1 in ${TileNum1[*]}
-do
-    for eachTile2 in ${TileNum2[*]}
-    do 
-	echo "${TileNum1[eachTile1-2]}" "${TileNum2[eachTile2-2]}"
-	echo x="${X[$eachTile1-2]}" y="${Y[$eachTile2-2]}"
-	
-	if [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "2_2" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "2_6" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "2_7" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "2_8" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "2_9" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "3_6" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "3_7" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "3_8" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "3_9" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "4_7" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "4_8" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "4_9" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "7_2" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "7_9" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "8_2" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "8_3" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "8_9" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "9_2" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "9_3" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "9_6" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "9_7" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "9_8" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "9_9" ]; then
-		echo Not Africa
-	else
-		echo downloading "$productName" average
-		##################################################
-		#downloads the binary r4 files of the calculated average done by the IRI's Data Library	
-		echo http://iridl.ldeo.columbia.edu/expert/SOURCES/.USGS/.LandDAAC/.MODIS/.250m/.16day/.$Dataset/T/%28"$StartMonth"%20"$StartYear"%29%28"$EndMonth"%20"$EndYear"%29RANGE/X/"${X[$eachTile1-2]}"/VALUE/Y/"${Y[$eachTile2-2]}"/VALUE%5BT%5Daverage/data.r4
-		curl "http://iridl.ldeo.columbia.edu/expert/SOURCES/.USGS/.LandDAAC/.MODIS/.250m/.16day/.$Dataset/T/%28"$StartMonth"%20"$StartYear"%29%28"$EndMonth"%20"$EndYear"%29RANGE/X/"${X[$eachTile1-2]}"/VALUE/Y/"${Y[$eachTile2-2]}"/VALUE%5BT%5Daverage/data.r4?filename="$productName"_"${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}".r4" -o $OutputDir/"$productName"_"${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}".r4
-	fi
-    done
-done
 
 #####STARTING THE GRASS ENVIRONMENT#####
 #some settings:
@@ -93,13 +70,19 @@ g.version
 #initialize g.region for sinusoidal
 g.region n=4447803 s=-4447797 e=6671705 w=-2223903 rows=$DatasetRow cols=$DatasetCol
 #remove unnecessary tiles
-notAfrica=(2_2 2_6 2_7 2_8 2_9 3_6 3_7 3_8 3_9 4_7 4_8 4_9 7_2 7_9 8_2 8_3 8_9 9_2 9_3 9_6 9_7 9_8 9_9)
-for eachnotAfrica in ${notAfrica[*]}
-do 
-    rm $InputDir/"$productName"_$eachnotAfrica.r4
-done
+# notAfrica=(2_2 2_6 2_7 2_8 2_9 3_6 3_7 3_8 3_9 4_7 4_8 4_9 7_2 7_9 8_2 8_3 8_9 9_2 9_3 9_6 9_7 9_8 9_9)
+# for eachnotAfrica in ${notAfrica[*]}
+# do 
+#     rm $InputDir/"$productName"_$eachnotAfrica.r4
+# done
 
 #####IMPORTING BINARIES AND EXPORTING GEOTIFFS FOR EACH TILE#####
+#arrays to loop through each of 64 tiles
+TileNum1=(2 3 4 5 6 7 8 9) 
+TileNum2=(2 3 4 5 6 7 8 9)
+#x and y centerpoints
+X=(-1667928 -555977.2 555973.2 1667924 2779874 3891824 5003775 6115725)
+Y=(3891828 2779877 1667927 555976.2 -555974.2 -1667925 -2779875 -3891826)
 #tile extents
 Top=(4447803 3335852 2223902 1111952 1 -1111950 -2223900 -3335850) #north
 Bottom=(3335852 2223902 1111952 1 -1111950 -2223900 -3335850 -4447801) #south
@@ -112,6 +95,18 @@ do
     for eachTile2 in ${TileNum2[*]}
     do 
 	echo "$eachTile1"_"$eachTile2"
+	echo "${TileNum1[eachTile1-2]}" "${TileNum2[eachTile2-2]}"
+	echo x="${X[$eachTile1-2]}" y="${Y[$eachTile2-2]}"
+	
+	if [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "2_2" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "2_6" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "2_7" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "2_8" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "2_9" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "3_6" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "3_7" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "3_8" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "3_9" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "4_7" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "4_8" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "4_9" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "7_2" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "7_9" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "8_2" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "8_3" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "8_9" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "9_2" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "9_3" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "9_6" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "9_7" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "9_8" ] || [ "${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}" == "9_9" ]; then
+		echo Not Africa
+	else
+		echo downloading "$productName" average
+		##################################################
+		#downloads the binary r4 files of the calculated average done by the IRI's Data Library	
+		echo http://iridl.ldeo.columbia.edu/expert/SOURCES/.USGS/.LandDAAC/.MODIS/.250m/.16day/.$Dataset/T/%28"$StartMonth"%20"$StartYear"%29%28"$EndMonth"%20"$EndYear"%29RANGE/X/"${X[$eachTile1-2]}"/VALUE/Y/"${Y[$eachTile2-2]}"/VALUE%5BT%5Daverage/data.r4
+		curl "http://iridl.ldeo.columbia.edu/expert/SOURCES/.USGS/.LandDAAC/.MODIS/.250m/.16day/.$Dataset/T/%28"$StartMonth"%20"$StartYear"%29%28"$EndMonth"%20"$EndYear"%29RANGE/X/"${X[$eachTile1-2]}"/VALUE/Y/"${Y[$eachTile2-2]}"/VALUE%5BT%5Daverage/data.r4?filename="$productName"_"${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}".r4" -o $InputDir/"$productName"_"${TileNum1[eachTile1-2]}"_"${TileNum2[eachTile2-2]}".r4
+	fi
 	
 	#prints out the bounds to the screen
 	echo north="${Top[$eachTile2-2]}" south="${Bottom[$eachTile2-2]}" east="${Right[$eachTile1-2]}" west="${Left[$eachTile1-2]}" # the "-2" allows you to choose an index value in TileNum
@@ -132,7 +127,7 @@ do
 
 	#####REMOVING TEMPORARY FILES IN GRASS GIS#####
 	#removes the temporary tile layers
-	# g.remove rast="$productName"_"$eachTile1"_"$eachTile2"@"$mapset"
+	g.remove rast="$productName"_"$eachTile1"_"$eachTile2"@"$mapset"
     done
 done 
 

@@ -1,4 +1,8 @@
 #!/bin/bash
+#get_mondata_IRI_MODIS250m.sh
+#Written by: Kimberly Peng
+#Created: 2012
+#This script creates a monthly average of the MODIS Vegetation 250m datasets for a specified temporal range.
 #/data4/afsisdata/IRI_MODIS/scripts/./get_mondata_IRI_MODIS250m.sh EVI Feb 2000 Jun 2015 /data7/MODIS/EVI/monthly sinusoidalSA modis
 Dataset=$1
 StartMonth=$2
