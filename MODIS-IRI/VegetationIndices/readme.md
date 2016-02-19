@@ -9,7 +9,7 @@ The data products include the following:
 * Reflectance Mid-Infrared (MIR) Band 7
 
 ## Example command in IRI DL Expert Mode
-The following code creates a February average from all Feb observations from 2002-2015 for one tile in Africa. 
+The following code creates a February average from all Feb observations from 2002-2015 for one tile in Africa. Check benno_grid for XY values for each tile and specific naming convention.
 ```
  expert
  SOURCES .USGS .LandDAAC .MODIS .250m .16day .EVI
