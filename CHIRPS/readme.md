@@ -11,4 +11,6 @@ This script can be used to get the average for each year or for the complete tim
 This script can be used to get the monthly average, annual or for the complete time series
 5. **get_chirps_ts.sh** <br/>
 This script creates a time series of specific temporal range.
+6. **get_chirps_sums.sh** <br/>
+This script creates a sum for each year.
 
