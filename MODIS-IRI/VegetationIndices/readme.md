@@ -22,13 +22,13 @@ The following code creates a February average from all Feb observations from 200
 link equivalent: http://iridl.ldeo.columbia.edu/expert/SOURCES/.USGS/.LandDAAC/.MODIS/.250m/.16day/.EVI/T/%282002%29%282015%29RANGE/T/%28Feb%29VALUES/X/-1667928/VALUE/Y/2779877/VALUE%5BT%5Daverage/#expert
 
 ## BASH scripts for time series or annual averages
-Run the scripts in the following order:
+Run the scripts in the following order:</br>
 1. **get_data_IRI_MODIS250m.sh** - Downloads MODIS data, mosaics, and reprojects to Lambert Azimuthal Equal Area (LAEA). </br>
 2. **geotiff_scale_clip.sh** - Multiplies MODIS by 10000 and clips for Africa. </br>
 
 
 ## BASH scripts for time series or annual monthly averages
-Run the scripts in the following order:
-1. **get_mondata_IRI_MODIS250m.sh** - Downloads MODIS data, mosaics, and reprojects to Lambert Azimuthal Equal Area (LAEA).
-2. **geotiff_scale_clip.sh** - Multiplies MODIS by 10000 and clips for Africa.
+Run the scripts in the following order:</br>
+1. **get_mondata_IRI_MODIS250m.sh** - Downloads MODIS data, mosaics, and reprojects to Lambert Azimuthal Equal Area (LAEA).</br>
+2. **geotiff_scale_clip.sh** - Multiplies MODIS by 10000 and clips for Africa.</br>
 
