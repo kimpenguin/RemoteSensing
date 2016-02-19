@@ -23,12 +23,12 @@ link equivalent: http://iridl.ldeo.columbia.edu/expert/SOURCES/.USGS/.LandDAAC/.
 
 ## BASH scripts for time series or annual averages
 Run the scripts in the following order:</br>
-1. **get_data_IRI_MODIS250m.sh** - Downloads MODIS data, mosaics, and reprojects to Lambert Azimuthal Equal Area (LAEA). </br>
+1. **get_data_IRI_MODIS250m.sh** - Downloads MODIS data, mosaics, and reprojects from Sinusoidal to Lambert Azimuthal Equal Area (LAEA). </br>
 2. **geotiff_scale_clip.sh** - Multiplies MODIS by 10000 and clips for Africa. </br>
 
 
 ## BASH scripts for time series or annual monthly averages
 Run the scripts in the following order:</br>
-1. **get_mondata_IRI_MODIS250m.sh** - Downloads MODIS data, mosaics, and reprojects to Lambert Azimuthal Equal Area (LAEA).</br>
+1. **get_mondata_IRI_MODIS250m.sh** - Downloads MODIS data, mosaics, and reprojects from Sinusoidal to Lambert Azimuthal Equal Area (LAEA).</br>
 2. **geotiff_scale_clip.sh** - Multiplies MODIS by 10000 and clips for Africa.</br>
 
