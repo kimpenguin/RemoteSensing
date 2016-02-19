@@ -1,4 +1,4 @@
-# This directory contains the BASH scripts used to create the MODIS Vegetation Indices for the Africa Soil Information Service (AfSIS). The raw data and initial processing was done using the IRI Data Library http://iridl.ldeo.columbia.edu/.
+## This directory contains the BASH scripts used to create the MODIS Vegetation Indices for the Africa Soil Information Service (AfSIS). The raw data and initial processing was done using the IRI Data Library http://iridl.ldeo.columbia.edu/.
 
 The data products include the following:
 * Enhanced Vegetation Index (EVI)
