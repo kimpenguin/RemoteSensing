@@ -1,0 +1,1 @@
+### This directory contains the python scripts used to approximate the dms to degrees to meter resolution.
