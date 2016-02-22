@@ -91,6 +91,7 @@ This script creates a time series average for a specified temporal range.
 ``
 /data2/CHIRPS/scripts/./get_chirps_ts.sh /data2/CHIRPS/raws 1981 2015 geographic chirps
 ``
+
 The command above creates a time series average of all the CHIRPS observations from 1981-2015.
 
 **Requirements:**
@@ -113,6 +114,8 @@ This script creates an annual sum for all the CHIRPS observations given a specif
 ``
 /data2/CHIRPS/scripts/./get_chirps_sums.sh /data2/CHIRPS/raws 1981 2015 geographic chirps
 ``
+
+The command above creates an sum for each year, starting from 1981. There will be an a raster sum for 1981, a raster sum for 1982, ... and a raster sum for 2015.
 
 **Requirements:**
 Before running this script, you need to run **get_chirps.sh** 
