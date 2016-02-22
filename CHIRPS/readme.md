@@ -7,7 +7,8 @@ This script downloads the raw data. <br/>
 ``
 /data2/CHIRPS/scripts/./get_chirps.sh /data2/CHIRPS 1981 2015 geographic chirps
 ``<br/>
-**Parameters:** <br/>
+**Parameters:**
+
   1. Path of directory in which to store the raw data
   2. Start Year - The first CHIRPS observations are available starting in 1981
   3. End Year - The CHIRPS is ongoing, so you can put the current year
