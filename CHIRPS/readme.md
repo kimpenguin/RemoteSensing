@@ -128,3 +128,17 @@ Before running this script, you need to run **get_chirps.sh**
   4. GRASS location name - Make sure this GRASS location is created in geographic latitude longitude projection
   5. GRASS mapset name - any name here because the mapset will be created in the script.
 
+---
+### 7. **gdal_reproject.sh**<br/>
+This script allows you to reproject completed rasters from geographic to Lambert Azimuthal Equal Area.
+
+**Example command:**
+
+``
+/data2/CHIRPS/scripts/./gdal_reproject.sh /data2/CHIRPS/raws/output
+``
+
+**Parameters:**
+
+  1. Path of directory that contains the layers that you would like to reproject to Lambert Azimuthal Equal Area.
+
