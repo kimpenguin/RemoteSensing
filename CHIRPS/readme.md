@@ -16,6 +16,7 @@ This script downloads the raw data.
   3. End Year - The CHIRPS is ongoing, so you can put the current year
   4. GRASS location name - Make sure this GRASS location is created in geographic latitude longitude projection
   5. GRASS mapset name - any name here because the mapset will be created in the script.
+  
 ---
 ### 2. **get_chirps_obs.sh** <br/>
 This script creates a text file containing the number of observations for each year
