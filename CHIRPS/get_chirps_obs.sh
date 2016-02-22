@@ -5,14 +5,12 @@
 #This script creates a text file containing the number of CHIRPS observations for each year data was acquired.
 
 #example command:
-#/data2/CHIRPS/scripts/chirps_obs.sh /data2/CHIRPS/raws 1981 2015 geographic chirps
+#/data2/CHIRPS/scripts/get_chirps_obs.sh /data2/CHIRPS/raws 1981 2015
 
 #Parameters
 InputDir=$1
 StartYear=$2
 EndYear=$3
-location=$4
-mapset=$5
 
 #creates a text file containing the year and the number of observations in that year.
 cd $InputDir
