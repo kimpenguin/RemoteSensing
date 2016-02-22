@@ -5,7 +5,7 @@
 #This script creates a monthly average of the CHIRPS data for the specified temporal range.
 
 #example command:
-#/data2/CHIRPS/scripts/get_chirps_monthly.sh /data2/CHIRPS/raws 1981 2015 geographic chirps
+#/data2/CHIRPS/scripts/./get_chirps_monthly.sh /data2/CHIRPS/raws 1981 2015 geographic chirps
 
 #Parameters
 InputDir=$1

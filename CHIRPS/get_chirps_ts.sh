@@ -3,15 +3,14 @@
 #Create time series of all CHIRPS data
 #Written by Kimberly Peng
 #Created February 2016
-#/data2/CHIRPS/scripts/get_chirps_ts.sh /data2/CHIRPS/raws /data2/CHIRPS/scripts 1981 2015 geographic chirps2
+#/data2/CHIRPS/scripts/./get_chirps_ts.sh /data2/CHIRPS/raws 1981 2015 geographic chirps2
 
 #Parameters
 InputDir=$1
-OutputDir=$2
-StartYear=$3
-EndYear=$4
-location=$5
-mapset=$6
+StartYear=$2
+EndYear=$3
+location=$4
+mapset=$5
 
 ######STARTING THE GRASS ENVIRONMENT
 #This section was derived from Bash examples (GNU/Linux) on http://grasswiki.osgeo.org/wiki/Working_with_GRASS_without_starting_it_explicitly

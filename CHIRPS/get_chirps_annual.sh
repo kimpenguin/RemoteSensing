@@ -3,7 +3,7 @@
 #Written by: Kimberly Peng
 #Created: November 2015
 #This script creates annual and time series averages of the CHIRPS data for Africa.
-#/data2/CHIRPS/scripts/get_chirps_ts.sh /data2/CHIRPS/raws 1981 2015 geographic chirps
+#/data2/CHIRPS/scripts/./get_chirps_annual.sh /data2/CHIRPS/raws 1981 2015 geographic chirps
 
 #Parameters
 InputDir=$1

@@ -1,6 +1,9 @@
 #!/bin/bash
-
-#/data2/CHIRPS/scripts/get_chirps_sums.sh /data2/CHIRPS/raws 1981 2015 geographic chirps
+#get_chirps_sums.sh
+#Create sums of all CHIRPS data
+#Written by Kimberly Peng
+#Created February 2016
+#/data2/CHIRPS/scripts/./get_chirps_sums.sh /data2/CHIRPS/raws 1981 2015 geographic chirps
 
 #Parameters
 InputDir=$1
