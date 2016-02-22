@@ -2,11 +2,13 @@
 
 ## Scripts
 ### 1. **get_chirps.sh** <br/>
-This script downloads the raw data. <br/>
-**Example command:** <br/>
+This script downloads the raw data.
+
+**Example command:** 
 ``
 /data2/CHIRPS/scripts/./get_chirps.sh /data2/CHIRPS 1981 2015 geographic chirps
-``<br/>
+``
+
 **Parameters:**
 
   1. Path of directory in which to store the raw data
@@ -14,8 +16,8 @@ This script downloads the raw data. <br/>
   3. End Year - The CHIRPS is ongoing, so you can put the current year
   4. GRASS location name - Make sure this GRASS location is created in geographic latitude longitude projection
   5. GRASS mapset name - any name here because the mapset will be created in the script.
-
-2. **get_chirps_obs.sh** <br/>
+---
+### 2. **get_chirps_obs.sh** <br/>
 This script creates a text file containing the number of observations for each year
 **Example command:** <br/>
 ``
@@ -23,17 +25,21 @@ This script creates a text file containing the number of observations for each y
 ``<br/>
 **Requirements:**
 Before running this script, you need to run **get_chirps.sh** <br/>
+
+**Parameters**
   1. Path of directory in which to store the raw data
   2. Start Year - The first CHIRPS observations are available starting in 1981
   3. End Year - The CHIRPS is ongoing, so you can put the current year
-  4. GRASS location name - Make sure this GRASS location is created in geographic latitude longitude projection
-  5. GRASS mapset name - any name here because the mapset will be created in the script.
-3. **get_chirps_annual.sh** <br/>
+---
+### 3. **get_chirps_annual.sh** <br/>
 This script can be used to get the average for each year or for the complete time series
-4. **get_chirps_monthly.sh** <br/>
+
+### 4. **get_chirps_monthly.sh** <br/>
 This script can be used to get the monthly average, annual or for the complete time series
-5. **get_chirps_ts.sh** <br/>
+
+####5. **get_chirps_ts.sh** <br/>
 This script creates a time series of specific temporal range.
-6. **get_chirps_sums.sh** <br/>
+
+### 6. **get_chirps_sums.sh** <br/>
 This script creates a sum for each year.
 
