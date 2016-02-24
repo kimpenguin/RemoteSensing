@@ -43,14 +43,41 @@ This script creates an average based on a specified temporal range. Before you r
   4. GRASS location name - Make sure this GRASS location is created in geographic latitude longitude projection
     * ``geographic``
   5. GRASS mapset name - any name here because the mapset will be created in the script.
-    * ``gpm``
+    * ``GPM``
 
 **Output**
 
 The output time series will be stored in a directory, **output**, that is created when the script is run.
 
 ---
-### 3. **gdal_reproject.sh**<br/>
+### 3. **get_gpm_monthly.sh**
+
+This script creates an average based on a specified temporal range. Before you run this script, make sure you have run **get_gpm.sh**.
+
+**Example command:**
+``/data2/GPM/scripts/./gpm_monthly.sh /data2/GPM 2014 2015 geographic GPM``
+
+
+**Parameters**
+
+  1. Path of directory where all the GPM directories and files are stored
+    * ``/data2/GPM``
+    * NOTE!!! Use the same directory you used to run the **get_gpm.sh**
+  2. Start Year - The first GPM observations are available starting in 2014
+    * ``2014``
+  3. End Year - The GPM is ongoing, so you can put the current year
+    * ``2015``
+  4. GRASS location name - Make sure this GRASS location is created in geographic latitude longitude projection
+    * ``geographic``
+  5. GRASS mapset name - any name here because the mapset will be created in the script.
+    * ``GPM``
+
+**Output**
+
+The output time series will be stored in a directory, **output**, that is created when the script is run.
+
+---
+### 4. **gdal_reproject.sh**<br/>
 This script allows you to reproject completed rasters from geographic to Lambert Azimuthal Equal Area.
 
 **Example command:**
