@@ -112,7 +112,7 @@ Before running this script, you need to run **get_chirps.sh**
 
 **Outputs**
 
-The output file will be stored in a directory, **outputs**, that the script creates in the Input directory.
+A time series average, **CHIRPS_avg_1981_2015.tif**, will be generated in ``/data2/CHIRPS/raws/outputs`` which is created when the script is run.
 
 ---
 ### 6. **get_chirps_sums.sh** <br/>
