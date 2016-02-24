@@ -105,6 +105,10 @@ Before running this script, you need to run **get_chirps.sh**
   4. GRASS location name - Make sure this GRASS location is created in geographic latitude longitude projection
   5. GRASS mapset name - any name here because the mapset will be created in the script.
 
+**Outputs**
+
+The output file will be stored in a directory, **outputs**, that the script creates in the Input directory.
+
 ---
 ### 6. **get_chirps_sums.sh** <br/>
 This script creates an annual sum for all the CHIRPS observations given a specific temporal range.
