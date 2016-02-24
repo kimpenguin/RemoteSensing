@@ -2,6 +2,7 @@
 # get_gpm_ts.sh
 # Written by Kimberly Peng
 # Created 2015
+#creates a time series average for the specified temporal range.
 #/data2/GPM/scripts/./get_gpm_ts.sh /data2/GPM 2014 2015 geographic GPM
 
 #Parameters
@@ -56,18 +57,30 @@ g.region n=40 s=-40 e=60 w=-20 res=0.1
 #####
 
 #####IMPORT DATA INTO GRASS
+#change to the Input directory location
 cd $InputDir
-datelist=$(ls 2*.txt)
+#create directory to store raw data
 RawDir=$InputDir/raws
+# mkdir $RawDir
+
+#create directory to house the average for each day observation
+RawMod=$InputDir/raws_modified
+mkdir $RawMod
+
+#get a listing of download text files
+datelist=$(ls $InputDir/toDownload/2*.txt)
+# echo $datelist
+
 cd $RawDir
-SumDir=$InputDir/avg
-mkdir $SumDir
 #loop through each date
 for d in $datelist
 do
-	fileDate=${d:0:8}
+	echo $d
+	# fileDate=${d:0:8}
+	fileDate=${d:22:8}
+	echo $fileDate
 	dlist=$(ls 3B-HHR-*"$fileDate"*.tif) #creates a list of all files for specific date
-	# echo $tiflist
+	echo $dlist
 
 	for dFile in $dlist
 	do
@@ -75,29 +88,32 @@ do
 		newName=$(echo $dFile | sed "s/.V03D.tif//")
 		# echo $newName
 		# import each file in date list
-		echo r.in.gdal -o input=$RawDir/$dFile output=$newName
+		r.in.gdal -o input=$RawDir/$dFile output=$newName
 		# g.region rast="$newName"@"$mapset"
-		echo r.null map="$newName"@"$mapset" setnull=9999
-		echo r.null map="$newName"@"$mapset" setnull=0
+		r.null map="$newName"@"$mapset" setnull=9999
+		r.null map="$newName"@"$mapset" setnull=0
 	done
 	rsList=$(echo $dlist | sed "s/ /,/g;s/.V03D.tif/@"$mapset"/g")
 	# echo $rsList
-	echo r.series input=$rsList output=GPM_IMERG_"$fileDate" method=average
-	echo r.out.gdal input=GPM_IMERG_"$fileDate"@"$mapset" output=$SumDir/GPM_IMERG_"$fileDate".tif
-	echo chmod 775 $SumDir/GPM_IMERG_"$fileDate".tif
+	#create a daily average of precipitation from the hourly observations
+	r.series input=$rsList output=GPM_IMERG_"$fileDate" method=average
+	r.out.gdal input=GPM_IMERG_"$fileDate"@"$mapset" output=$RawMod/GPM_IMERG_"$fileDate".tif
+	chmod 775 $RawMod/GPM_IMERG_"$fileDate".tif
 done
+
+
 #####CREATE TIME Series
-# OutputDir=$InputDir/output
-# mkdir $OutputDir
-# cd $SumDir
-# sumlist=$(ls GPM*.tif)
-# echo $sumlist
+OutputDir=$InputDir/output
+mkdir $OutputDir
+cd $RawMod
+RawModlist=$(ls GPM*.tif)
+echo $RawModlist
 
-# rsSumList=$(echo $sumlist | sed "s/ /,/g;s/.tif/@"$mapset"/g")
+rsRawModList=$(echo $RawModlist | sed "s/ /,/g;s/.tif/@"$mapset"/g")
 # echo $rsSumList
-# g.remove rast=GPM_IMERG_"$StartYear"_"$EndYear"@"$mapset"
-# r.series input=$rsSumList output=GPM_IMERG_"$StartYear"_"$EndYear" method=average
-# r.out.gdal input=GPM_IMERG_"$StartYear"_"$EndYear"@"$mapset" output=$OutputDir/GPM_IMERG_"$StartYear"_"$EndYear".tif
-# chmod 775 $OutputDir/GPM_IMERG_"$StartYear"_"$EndYear".tif
+g.remove rast=GPM_IMERG_"$StartYear"_"$EndYear"@"$mapset"
 
-
+#create time series average and export to output directory
+r.series input=$rsRawModList output=GPM_IMERG_"$StartYear"_"$EndYear" method=average
+r.out.gdal input=GPM_IMERG_"$StartYear"_"$EndYear"@"$mapset" output=$OutputDir/GPM_IMERG_"$StartYear"_"$EndYear".tif
+chmod 775 $OutputDir/GPM_IMERG_"$StartYear"_"$EndYear".tif

@@ -1,22 +1,25 @@
 #!/bin/bash
 # get_gpm.sh
-# downloads GPM data
+# downloads the raw GPM data
 # Written by Kimberly Peng
 # Created 2015
-#/data2/GPM/scripts/get_gpm.sh /data2/GPM 2014 2015 geographic GPM
+#/data2/GPM/scripts/./get_gpm.sh /data2/GPM 2014 2015
 
 #Parameters
 InputDir=$1
 StartYear=$2
 EndYear=$3
-location=$4
-mapset=$5
+
 
 #change to the Input directory location
 cd $InputDir
 #create directory to store raw data
 RawDir=$InputDir/raws
 mkdir $RawDir
+
+#create directory to contain text files with download files
+ToDownload=$InputDir/toDownload
+mkdir $ToDownload
 #####DOWNLOAD DATA
 #gets a list of directories
 curl ftp://arthurhou.pps.eosdis.nasa.gov/gpmdata/ --user kmp2143@columbia.edu:kmp2143@columbia.edu > dirDates.txt
@@ -41,9 +44,9 @@ do
 					echo day is $eachDay
 					echo "$newWord""$eachMonth""$eachDay"_toDownload.txt
 					echo ftp://arthurhou.pps.eosdis.nasa.gov/gpmdata/"$newWord"/"$eachMonth"/"$eachDay"/
-					curl ftp://arthurhou.pps.eosdis.nasa.gov/gpmdata/"$newWord"/"$eachMonth"/"$eachDay"/gis/ --user kmp2143@columbia.edu:kmp2143@columbia.edu > "$newWord""$eachMonth""$eachDay"_toDownload.txt
+					curl ftp://arthurhou.pps.eosdis.nasa.gov/gpmdata/"$newWord"/"$eachMonth"/"$eachDay"/gis/ --user kmp2143@columbia.edu:kmp2143@columbia.edu > "$ToDownload"/"$newWord""$eachMonth""$eachDay"_toDownload.txt
 					# loop through text file to download the tifs
-					for newFile in $(cat "$newWord""$eachMonth""$eachDay"_toDownload.txt); do
+					for newFile in $(cat "$ToDownload"/"$newWord""$eachMonth""$eachDay"_toDownload.txt); do
 						if [ ${newFile:0:2} == "3B" ]; then
 							echo ftp://arthurhou.pps.eosdis.nasa.gov/gpmdata/"$newWord"/"$eachMonth"/"$eachDay"/gis/"$newFile"
 							curl ftp://arthurhou.pps.eosdis.nasa.gov/gpmdata/"$newWord"/"$eachMonth"/"$eachDay"/gis/"$newFile" --user kmp2143@columbia.edu:kmp2143@columbia.edu -o $RawDir/$newFile
@@ -57,4 +60,4 @@ do
 	done
 	year=$((year+1))
 done
-#####
+####
