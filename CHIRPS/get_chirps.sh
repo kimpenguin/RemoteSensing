@@ -4,14 +4,12 @@
 #Date: November 2015
 #This script downloads the CHIRPS 0.05 degree raw observations for Africa.
 #The raw zip files are extracted, leaving geotiff files of the raw observations.
-#/data2/CHIRPS/scripts/get_chirps.sh /data2/CHIRPS 1981 2015 geographic chirps
+#/data2/CHIRPS/scripts/get_chirps.sh /data2/CHIRPS 1981 2015
 
 #Parameters
 InputDir=$1
 StartYear=$2
 EndYear=$3
-location=$4
-mapset=$5
 
 #change to the Input directory location
 cd $InputDir

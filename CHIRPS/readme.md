@@ -7,16 +7,17 @@ This script downloads the raw data.
 **Example command:** 
 
 ``
-/data2/CHIRPS/scripts/./get_chirps.sh /data2/CHIRPS 1981 2015 geographic chirps
+/data2/CHIRPS/scripts/./get_chirps.sh /data2/CHIRPS 1981 2015
 ``
 
 **Parameters:**
 
   1. Path of directory in which to store the raw data
+    * ``/data2/CHIRPS``
   2. Start Year - The first CHIRPS observations are available starting in 1981
+    * ``1981``
   3. End Year - The CHIRPS is ongoing, so you can put the current year
-  4. GRASS location name - Make sure this GRASS location is created in geographic latitude longitude projection
-  5. GRASS mapset name - any name here because the mapset will be created in the script.
+    * ``2015``
 
 ---
 ### 2. **get_chirps_obs.sh** <br/>
@@ -33,8 +34,11 @@ Before running this script, you need to run **get_chirps.sh**
 
 **Parameters**
   1. Path of directory in which to store the raw data
+    * ``/data2/CHIRPS/raws``
   2. Start Year - The first CHIRPS observations are available starting in 1981
+    * ``1981``
   3. End Year - The CHIRPS is ongoing, so you can put the current year
+    * ``2015``
 
 ---
 ### 3. **get_chirps_annual.sh** <br/>
@@ -54,10 +58,15 @@ Before running this script, you need to run **get_chirps.sh**
 **Parameters:**
 
   1. Path of directory that contains the raw CHIRPS observations
+    * ``/data2/CHIRPS/raws``
   2. Start Year - The first CHIRPS observations are available starting in 1981
+    * ``1981``
   3. End Year - The CHIRPS is ongoing, so you can put the current year
+    * ``2015``
   4. GRASS location name - Make sure this GRASS location is created in geographic latitude longitude projection
+    * ``geographic``
   5. GRASS mapset name - any name here because the mapset will be created in the script.
+    * ``chirps``
 
 ---
 ### 4. **get_chirps_monthly.sh** <br/>
@@ -77,10 +86,15 @@ Before running this script, you need to run **get_chirps.sh**
 **Parameters:**
 
   1. Path of directory that contains the raw CHIRPS observations
+    * ``/data2/CHIRPS/raws``
   2. Start Year - The first CHIRPS observations are available starting in 1981
+    * ``1981``
   3. End Year - The CHIRPS is ongoing, so you can put the current year
+    * ``2015``
   4. GRASS location name - Make sure this GRASS location is created in geographic latitude longitude projection
+    * ``geographic``
   5. GRASS mapset name - any name here because the mapset will be created in the script.
+    * ``chirps``
 
 ---
 ####5. **get_chirps_ts.sh** <br/>
@@ -132,10 +146,15 @@ Before running this script, you need to run **get_chirps.sh**
 **Parameters:**
 
   1. Path of directory that contains the raw CHIRPS observations
+    * ``/data2/CHIRPS/raws``
   2. Start Year - The first CHIRPS observations are available starting in 1981
+    * ``1981``
   3. End Year - The CHIRPS is ongoing, so you can put the current year
+    * ``2015``
   4. GRASS location name - Make sure this GRASS location is created in geographic latitude longitude projection
+    * ``geographic``
   5. GRASS mapset name - any name here because the mapset will be created in the script.
+    * ``chirps``
 
 ---
 ### 7. **gdal_reproject.sh**<br/>
@@ -150,4 +169,5 @@ This script allows you to reproject completed rasters from geographic to Lambert
 **Parameters:**
 
   1. Path of directory that contains the layers that you would like to reproject to Lambert Azimuthal Equal Area.
+    * ``/data2/CHIRPS/raws/output``
 
