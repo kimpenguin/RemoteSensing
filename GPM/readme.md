@@ -45,11 +45,11 @@ This script creates an average based on a specified temporal range. Before you r
   5. GRASS mapset name - any name here because the mapset will be created in the script.
     * ``gpm``
 
- **Output**
+**Output**
 
- The output time series will be stored in a directory, **output**, that is created when the script is run.
+The output time series will be stored in a directory, **output**, that is created when the script is run.
 
- ---
+---
 ### 3. **gdal_reproject.sh**<br/>
 This script allows you to reproject completed rasters from geographic to Lambert Azimuthal Equal Area.
 
