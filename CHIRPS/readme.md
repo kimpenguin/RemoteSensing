@@ -100,10 +100,15 @@ Before running this script, you need to run **get_chirps.sh**
 **Parameters:**
 
   1. Path of directory that contains the raw CHIRPS observations
+    * /data2/CHIRPS/raws 
   2. Start Year - The first CHIRPS observations are available starting in 1981
+    * 1981
   3. End Year - The CHIRPS is ongoing, so you can put the current year
+    *2015
   4. GRASS location name - Make sure this GRASS location is created in geographic latitude longitude projection
+    * geographic
   5. GRASS mapset name - any name here because the mapset will be created in the script.
+    * chirps
 
 **Outputs**
 
