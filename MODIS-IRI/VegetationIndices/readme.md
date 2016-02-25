@@ -109,3 +109,25 @@ The command above will create a time series average for each month, Jan-Dec, of 
 
 The time series averages for each month will be located in a directory, **outputs**, which is created when the script ran. For the example command, the outputs would appear **EVI_avgIRI_Feb2000_Jun2015_Jan_mosaicLAEA.tif**, **EVI_avgIRI_Feb2000_Jun2015_Feb_mosaicLAEA.tif**, ..., **EVI_avgIRI_Feb2000_Jun2015_Dec_mosaicLAEA.tif**.
 
+---
+### 3. **geotiff_scale_clip.sh**
+
+This script multiplies the vegetation indices by 10000, so that users must apply a scale factor of 0.0001 to retrieve valid index values. The purpose of multiplying was to reduce the file size, while maintaining valid values. The vegetation indices are then clipped for Africa.
+
+You will have to create the Africa clip files.
+
+**Example command:**
+
+```
+/data4/afsisdata/IRI_MODIS/scripts/./geotiff_scale_clip.sh /data7/MODIS/200002-201509 lambert modis
+```
+
+**Parameters:**
+  1. Path of inputs
+  	* ``/data7/MODIS/200002-201509``
+  2. Name of Lambert Azimuthal Equal Area GRASS location
+  	* ``lambert``
+  3. Name of GRASS mapset to create
+  	* ``modis``
+
+
