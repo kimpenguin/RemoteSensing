@@ -14,10 +14,10 @@ StartMonth=$2
 StartYear=$3
 EndMonth=$4
 EndYear=$5
-InputDir=$6
+OutputDir=$6
 
-OutputDir=$InputDir/outputs
-mkdir $OutputDir
+InputDir=$OutputDir/inputs
+mkdir $InputDir
 months="Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec"
 
 for eachMonth in $months
@@ -60,3 +60,6 @@ do
 	chmod 775 $OutputDir/"$DatasetName"_"$eachMonth"'_mosaicLAEA.tif'
 
 done
+
+#remove inputs directory
+rm -r $InputDir
