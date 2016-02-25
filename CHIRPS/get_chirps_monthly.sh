@@ -96,6 +96,6 @@ do
 	r.out.gdal input=CHIRPS_"$StartYear"_"$EndYear"_"$eachMonth"@"$mapset" output=$OutputDir/CHIRPS_"$StartYear"_"$EndYear"_"$eachMonth".tif
 	chmod 775 $OutputDir/CHIRPS_"$StartYear"_"$EndYear"_"$eachMonth".tif
 
-	remove monthly rasters from mapset
+	# remove monthly rasters from mapset
 	g.remove rast=$rsMonthList
 done
