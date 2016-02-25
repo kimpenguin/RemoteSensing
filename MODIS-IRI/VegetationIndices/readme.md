@@ -64,6 +64,7 @@ The script above will generate an Africa wide map of the time series average enh
 
 **Outputs**
 The time series average, **EVI_avgIRI_Feb2000_Jun2015_mosaicLAEA.tif**, will be located in a directory, **outputs**, which is created when the script ran.
+
 ---
 ### 2. **get_mondata_IRI_MODIS250m.sh**
 
