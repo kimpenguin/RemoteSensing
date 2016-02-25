@@ -63,6 +63,7 @@ The script above will generate an Africa wide map of the time series average enh
   	* In the example command, ``modis``
 
 **Outputs**
+
 The time series average, **EVI_avgIRI_Feb2000_Jun2015_mosaicLAEA.tif**, will be located in a directory, **outputs**, which is created when the script ran.
 
 ---
