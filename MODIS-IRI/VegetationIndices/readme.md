@@ -106,5 +106,6 @@ The command above will create a time series average for each month, Jan-Dec, of 
   	* In the example command, ``modis``
 
 **Outputs**
+
 The time series averages for each month will be located in a directory, **outputs**, which is created when the script ran. For the example command, the outputs would appear **EVI_avgIRI_Feb2000_Jun2015_Jan_mosaicLAEA.tif**, **EVI_avgIRI_Feb2000_Jun2015_Feb_mosaicLAEA.tif**, ..., **EVI_avgIRI_Feb2000_Jun2015_Dec_mosaicLAEA.tif**.
 
