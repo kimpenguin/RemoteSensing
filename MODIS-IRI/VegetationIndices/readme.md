@@ -32,6 +32,8 @@ This script downloads and mosaics the time series average for the vegetation ind
 /data4/afsisdata/IRI_MODIS/scripts/./get_data_IRI_MODIS250m.sh EVI Feb 2000 Jun 2015 /data7/MODIS/EVI sinusoidal modis
 ```
 
+The script above will generate an Africa wide map of the time series average enhanced vegetation index (EVI) using all the observations from February 2000 - June 2015. The data will start in sinusoidal projection but will be mosaicked and reprojected to Lambert Azimuthal Equal Area (LAEA).
+
 **Parameters:**
 
   1. Name of the data set that you would like to download. Below are the valid choices:
