@@ -13,7 +13,7 @@ StartMonth=$2
 StartYear=$3
 EndMonth=$4
 EndYear=$5
-OutputDir=$6
+MainDirectory=$6
 location=$7
 mapset=$8
 
@@ -22,8 +22,8 @@ DatasetRow=4800
 DatasetCol=4800
 FileType=Float32
 
-cd $OutputDir
-InputDir=$OutputDir/r4
+cd $MainDirectory
+InputDir=$MainDirectory/inputs
 mkdir $InputDir
 
 #assign the product name
@@ -122,8 +122,8 @@ do
 
 	#####EXPORTING GEOTIFFS OF FILES TO DIRECTOR ON SERVER#####
 	#Geotiff outputs for each tile containing the time series average performed by the IRI Data Library
-	r.out.gdal input="$productName"_"$eachTile1"_"$eachTile2"@"$mapset" type=$FileType output=$OutputDir/"$productName"_"$eachTile1"_"$eachTile2".tif
-	chmod 775 $OutputDir/"$productName"_"$eachTile1"_"$eachTile2".tif
+	r.out.gdal input="$productName"_"$eachTile1"_"$eachTile2"@"$mapset" type=$FileType output=$InputDir/"$productName"_"$eachTile1"_"$eachTile2".tif
+	chmod 775 $InputDir/"$productName"_"$eachTile1"_"$eachTile2".tif
 
 	#####REMOVING TEMPORARY FILES IN GRASS GIS#####
 	#removes the temporary tile layers
@@ -132,7 +132,9 @@ do
 done 
 
 #####MOSAICKING AND REPROJECTING TO LAMBERT, EXPORT TO DIRECTORY ON SERVER#####
-cd $OutputDir
+cd $InputDir
+OutputDir=$MainDirectory/outputs
+mkdir $OutputDir
 #list all tif in directory
 tiflist=$(ls "$productName"*.tif|grep -v "mosaic")
 echo $tiflist
@@ -144,4 +146,7 @@ time gdalwarp -overwrite -s_srs '+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +a=6371007.18
 
 #changes the permissions for the calculated average and sum
 chmod 775 $OutputDir/"$productName"'_mosaicLAEA.tif'
+
+#remove inputs directory
+rm -r $InputDir
 

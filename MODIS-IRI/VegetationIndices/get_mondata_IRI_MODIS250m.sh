@@ -9,7 +9,7 @@ StartMonth=$2
 StartYear=$3
 EndMonth=$4
 EndYear=$5
-OutputDir=$6
+MainDirectory=$6
 location=$7
 mapset=$8
 
@@ -20,8 +20,8 @@ FileType=Float32
 
 productName="$Dataset"_avgIRI_"$StartMonth""$StartYear"_"$EndMonth""$EndYear"
 
-cd $OutputDir
-InputDir=$OutputDir/r4
+cd $MainDirectory
+InputDir=$MainDirectory/inputs
 mkdir $InputDir
 
 #####STARTING THE GRASS ENVIRONMENT#####
@@ -68,7 +68,7 @@ g.region n=4447803 s=-4447797 e=6671705 w=-2223903 rows=$DatasetRow cols=$Datase
 notAfrica=(2_2 2_6 2_7 2_8 2_9 3_6 3_7 3_8 3_9 4_7 4_8 4_9 7_2 7_9 8_2 8_3 8_9 9_2 9_3 9_6 9_7 9_8 9_9)
 for eachnotAfrica in ${notAfrica[*]}
 do 
-    rm $OutputDir/"$productName"_$eachnotAfrica.r4
+    rm $InputDir/"$productName"_$eachnotAfrica.r4
 done
 
 #static variables to download the calculated average from IRI's Data library
@@ -84,8 +84,8 @@ Right=(-1111952 -2 1111948 2223899 3335849 4447800 5559750 6671700) #east
 Left=(-2223903 -1111952 -2 1111948 2223899 3335849 4447800 5559750) #west
 
 #####DOWNLOAD DATA
-months="Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec"
-
+# months="Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec"
+months="Feb"
 for eachMonth in $months  
 do
    cd $InputDir
@@ -120,13 +120,15 @@ do
 
 				#####EXPORTING GEOTIFFS OF FILES TO DIRECTOR ON SERVER#####
 				#Geotiff outputs for each tile containing the time series average performed by the IRI Data Library
-				r.out.gdal input="$productName"_"$eachMonth"_"$eachTile1"_"$eachTile2"@"$mapset" type=$FileType output=$OutputDir/"$productName"_"$eachMonth"_"$eachTile1"_"$eachTile2".tif
-				chmod 775 $OutputDir/"$productName"_"$eachMonth"_"$eachTile1"_"$eachTile2".tif
+				r.out.gdal input="$productName"_"$eachMonth"_"$eachTile1"_"$eachTile2"@"$mapset" type=$FileType output=$InputDir/"$productName"_"$eachMonth"_"$eachTile1"_"$eachTile2".tif
+				chmod 775 $InputDir/"$productName"_"$eachMonth"_"$eachTile1"_"$eachTile2".tif
 			fi
 		done
 	done
 	#####MOSAIC FOR EACH MONTH
-	cd $OutputDir
+	cd $InputDir
+	OutputDir=$MainDirectory/outputs
+	mkdir $OutputDir
 	#list all tif in directory
 	tiflist=$(ls "$productName"_"$eachMonth"*.tif|grep -v "mosaic")
 	echo $tiflist
@@ -140,4 +142,5 @@ do
 	chmod 775 $OutputDir/"$productName"_"$eachMonth"'_mosaicLAEA.tif'
 done
 
-
+#remove inputs directory
+rm -r $InputDir
