@@ -4,13 +4,14 @@
 #Written by Sonya Ahamed
 
 #Sample Command:
-#/data4/afsisdata/USGS_updates/scripts/./albedo_mosaic_Africa_USGS.sh /data4/afsisdata/USGS_updates/albedo/outputs /data4/afsisdata/USGS_updates/albedo/outputs/mosaics Albedo_BSA_vis
+#/data4/afsisdata/USGS_updates/scripts/./albedo_mosaic_Africa_USGS.sh /data4/afsisdata/USGS_updates/albedo/regions Albedo_BSA_vis
 
 #Parameters
 InputDir=$1
-OutputDir=$2
-BandName=$3
+BandName=$2
 
+OutputDir=$InputDir/africa
+mkdir $OutputDir
 
 #Change into Input Directory
 cd $InputDir

@@ -4,12 +4,14 @@
 #Written by Sonya Ahamed, modified by Kimberly Peng
 
 #Sample Command:
-#/data4/afsisdata/USGS_updates/scripts/./albedo_mosaic_regions_USGS.sh /data4/afsisdata/USGS_updates/albedo/MCD43A3.005 /data4/afsisdata/USGS_updates/albedo/outputs Albedo_BSA_Band_vis
+#/data4/afsisdata/USGS_updates/scripts/./albedo_mosaic_regions_USGS.sh /data4/afsisdata/USGS_updates/albedo/MCD43A3.005 Albedo_BSA_Band_vis
 
 #Parameters
 InputDir=$1
-OutputDir=$2
-BandName=$3
+BandName=$2
+
+OutputDir=$InputDir/regions
+mkdir $OutputDir
 
 #sets the band parameters for the modis reprojection tool
 if [ $BandName == "Albedo_BSA_Band_vis" ]; then

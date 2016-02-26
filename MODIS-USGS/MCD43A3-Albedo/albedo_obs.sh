@@ -8,25 +8,28 @@ InputDir=$1
 StartYear=$2
 EndYear=$3
 
+OutputDir=$InputDir/tracker
+mkdir $OutputDir
+
 #create a text file containing the total number of albedo raw files for each year
 cd $InputDir
 d=$(date '+%Y%m%d-%H:%M:%S')
-touch $InputDir/albedo_obs_$d.txt
+touch $OutputDir/albedo_obs_$d.txt
 y=$StartYear
 while [ $y -le $EndYear ]
 do
-	# echo "Number of observations for" $y >> $InputDir/chirps_obs.txt
-	# cd $InputDir/$y
+	# echo "Number of observations for" $y >> $OutputDir/chirps_obs.txt
+	# cd $OutputDir/$y
 	tifList=$(ls $y*.tif)
 	arr=($tifList)
-	echo $y":"${#arr[@]} >> $InputDir/albedo_obs_$d.txt
-
+	echo $y":"${#arr[@]} >> $OutputDir/albedo_obs_$d.txt
+	echo ${arr[@]} >> $OutputDir/albedo_files_$d.txt
 	y=$((y+1))
 done
 
 #create a total number of observations
 oldNum=0
-for eachFile in $(cat $InputDir/albedo_obs_$d.txt); do
+for eachFile in $(cat $OutputDir/albedo_obs_$d.txt); do
 	echo oldNum is $oldNum
 	curNum=$(echo $eachFile | sed 's/.*://')
 	echo curNum is $curNum

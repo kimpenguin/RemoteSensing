@@ -6,6 +6,7 @@
 
 #Sample command
 #/data4/afsisdata/USGS_updates/scripts/get_data_USGS_oneDate.sh /data4/afsisdata/USGS_updates/albedo/redoDate MOLT MOD15A2.005 2013.12.27
+#/data4/afsisdata/USGS_updates/scripts/get_data_USGS_oneDate.sh /data4/afsisdata/USGS_updates/scripts/test MOTA MCD43A3.005 2013.12.27
 
 #Parameters
 InputDir=$1

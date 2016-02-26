@@ -5,13 +5,15 @@
 #Last modified: 2015
 
 #Sample Command: 
-#/data4/afsisdata/USGS_updates/scripts/./albedo_geoprocessing.sh /data2/afsisdata/MODIS/Albedo_WSA_shortwave/geotiffs /data2/afsisdata/MODIS/Albedo_WSA_shortwave/outputs WSA_shortwave sinusoidalSA kpeng
+#/data4/afsisdata/USGS_updates/scripts/./albedo_geoprocessing.sh /data2/afsisdata/MODIS/Albedo_WSA_shortwave/geotiffs WSA_shortwave sinusoidalSA kpeng
 
-InputDirectory=$1
-OutputDirectory=$2
-DatasetName=$3
-location=$4
-mapset=$5
+InputDir=$1
+DatasetName=$2
+location=$3
+mapset=$4
+
+OutputDir=$InputDir/outputs
+mkdir $OutputDir
 
 echo $location
 ############Start grass environment
@@ -55,7 +57,7 @@ g.version
 
 ####################################################################
 
-cd $InputDirectory
+cd $InputDir
 list=$(ls *$DatasetName*)
 len=$(ls -1 *$DatasetName*| wc )    #swap in count of total number of grids
 
@@ -68,7 +70,7 @@ g.region n=4447802.07792318 s=-4447802.07941082 w=-2223901.03900373 e=8709352.44
 time for file in ${list[*]}
 do
    echo $file
-   r.in.gdal input=$InputDirectory/$file output=${file/\.tif/} -e  #take out the .tif from name
+   r.in.gdal input=$InputDir/$file output=${file/\.tif/} -e  #take out the .tif from name
    g.region rast=${file/\.tif/}@$mapset
    r.null map=${file/\.tif/}@$mapset setnull=32767 
 done
@@ -102,12 +104,12 @@ elif [ $DatasetName == "WSA_shortwave" ]; then
 fi
 
 #export the final outputs
-# r.out.gdal input=$DatasetName'Average@'$mapset output=$OutputDirectory/$DatasetName'Average.tif' type=UInt16 
-r.out.gdal input=$DatasetName'Average@'$mapset output=$OutputDirectory/$DatasetName'Average.tif'
-# r.out.gdal input=$DatasetName'Variance@'$mapset output=$OutputDirectory/$DatasetName'Variance.tif' type=UInt16
-r.out.gdal input=$DatasetName'Variance@'$mapset output=$OutputDirectory/$DatasetName'Variance.tif'
-# r.out.gdal input=$DatasetName'StdDev@'$mapset output=$OutputDirectory/$DatasetName'StdDev.tif' type=UInt16
-r.out.gdal input=$DatasetName'StdDev@'$mapset output=$OutputDirectory/$DatasetName'StdDev.tif'
+# r.out.gdal input=$DatasetName'Average@'$mapset output=$OutputDir/$DatasetName'Average.tif' type=UInt16 
+r.out.gdal input=$DatasetName'Average@'$mapset output=$OutputDir/$DatasetName'Average.tif'
+# r.out.gdal input=$DatasetName'Variance@'$mapset output=$OutputDir/$DatasetName'Variance.tif' type=UInt16
+r.out.gdal input=$DatasetName'Variance@'$mapset output=$OutputDir/$DatasetName'Variance.tif'
+# r.out.gdal input=$DatasetName'StdDev@'$mapset output=$OutputDir/$DatasetName'StdDev.tif' type=UInt16
+r.out.gdal input=$DatasetName'StdDev@'$mapset output=$OutputDir/$DatasetName'StdDev.tif'
 
 # # if you want to remove input grids when calculations are completed-
 # data=$(g.mlist type=rast pattern=$DatasetName mapset=PERMANENT) 
