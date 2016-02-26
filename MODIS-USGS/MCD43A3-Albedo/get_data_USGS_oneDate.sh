@@ -1,8 +1,8 @@
 #!/bin/bash
-#get_data_USGS.sh
+#get_data_USGS_onedate.sh
 #This script was modified to allow users the ability to specify one specific date to download
+#written by Kimberly Peng
 #modified version of get_data_USGS.sh written by Sonya Ahamed
-#modified by Kimberly Peng
 
 #Sample command
 #/data4/afsisdata/USGS_updates/scripts/get_data_USGS_oneDate.sh /data4/afsisdata/USGS_updates/albedo/redoDate MOLT MOD15A2.005 2013.12.27
@@ -15,8 +15,15 @@ oneDate=$4
 
 echo data is $oneDate
 
+
+
 #change to the Input directory location
 cd $InputDir
+#creates a base directory and changes location to the base directory
+mkdir $baseDir
+cd $baseDir
+
+#make a date directory to store the raw files
 mkdir $oneDate
 cd $oneDate
 
@@ -45,11 +52,11 @@ do
 			eachFile=$(echo ${newWord2} | sed 's/.*"\(.*\)"[^"]*$/\1/')
 			#downloads file from USGS
 			curl --retry 10 -O http://e4ftl01.cr.usgs.gov/$basePath/$baseDir/$oneDate/$eachFile --user anonymous:
-#	              echo http://e4ftl01.cr.usgs.gov/$basePath/$baseDir/$oneDate/$eachFile
+	        #echo http://e4ftl01.cr.usgs.gov/$basePath/$baseDir/$oneDate/$eachFile
 			#generates error report if the file fails to download
 			if [ $? -ne 0 ]; then
 				echo $basePath/$baseDir/$eachDate/$eachFile "failed error code "$? >> downloadErr.txt
-               		fi
+       		fi
 		fi
 	done
 done

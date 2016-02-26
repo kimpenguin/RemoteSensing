@@ -1,8 +1,9 @@
 #!/bin/bash
 #get_data_USGS_temporal.sh
 #This script was modified to allow users the ability to specify temporal range of the data
+#written by Kimberly Peng
 #modified version of get_data_USGS.sh written by Sonya Ahamed
-#modified by Kimberly Peng
+
 
 #Sample commands
 #/data4/afsisdata/USGS_updates/scripts/get_data_USGS_temporal.sh /data4/afsisdata/USGS_updates/albedo 2012 2014 MOTA MCD43A3.005
@@ -88,20 +89,18 @@ do
 				eachFile=$(echo ${newWord2} | sed 's/.*"\(.*\)"[^"]*$/\1/')
 				#downloads file from USGS
 				curl --retry 10 -O http://e4ftl01.cr.usgs.gov/$basePath/$baseDir/$eachDate/$eachFile --user anonymous:
-#		              echo http://e4ftl01.cr.usgs.gov/$basePath/$baseDir/$eachDate/$eachFile
+#		        echo http://e4ftl01.cr.usgs.gov/$basePath/$baseDir/$eachDate/$eachFile
 				#generates error report if the file fails to download
 				if [ $? -ne 0 ]; then
 					echo $basePath/$baseDir/$eachDate/$eachFile "failed error code "$? >> downloadErr.txt
-                 		fi
+         		fi
 			fi
 		done
 
-        done
+    done
 
 	echo total number $totFile
 	echo $eachDate $totFile >> $InputDir/totalObs.txt
-
-
 
 	#increments for the next date
 	n=$((n+1))
