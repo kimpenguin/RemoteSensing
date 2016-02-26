@@ -10,7 +10,7 @@
 
 #Parameters
 InputDir=$1
-OutputDir=$InputDir/outputs
+OutputDir=$InputDir/africa
 mkdir $OutputDir
 
 #loop over all folders in MOD15A2

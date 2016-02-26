@@ -72,7 +72,7 @@ echo last year is $EndYear
 #specify g.region based gdalinfo stats on one of the continent mosaics
 g.region -p n=39:59:59.999986N s=40:00:00.460219S e=78:19:31.27594E w=26:06:29.324819W rows=9600 cols=12532 res=0:00:30.000048
 
-OutputDir=$InputDir/output
+OutputDir=$InputDir/outputs
 mkdir $OutputDir
 
 i=$StartYear
