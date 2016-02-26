@@ -10,6 +10,7 @@
 InputDir=$1
 BandName=$2
 
+#create output directory to store africa mosaics
 OutputDir=$InputDir/africa
 mkdir $OutputDir
 

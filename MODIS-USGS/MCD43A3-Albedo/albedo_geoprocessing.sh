@@ -12,6 +12,7 @@ DatasetName=$2
 location=$3
 mapset=$4
 
+#create output directory for time series files
 OutputDir=$InputDir/outputs
 mkdir $OutputDir
 

@@ -10,6 +10,7 @@
 InputDir=$1
 BandName=$2
 
+# create output directory to store regions
 OutputDir=$InputDir/regions
 mkdir $OutputDir
 
