@@ -91,13 +91,13 @@ do
 		done
 
 		sumList=$(echo $monthList | sed "s/ /,/g;s/.tif/@"$mapset"/g")
-		# r.series input=$sumList output=CHIRPS_sum_"$y"_"$eachMonth" method=sum
+		r.series input=$sumList output=CHIRPS_sum_"$y"_"$eachMonth" method=sum
 
 		#add name to time series list
 		tsList+=CHIRPS_sum_"$y"_"$eachMonth"" "
 
 		# remove monthly rasters from mapset
-		# g.remove rast=$sumList
+		g.remove rast=$sumList
 
 		#increment number of observations
 		newVal=$((obs+incrementalNum))
@@ -110,7 +110,7 @@ do
 	echo total number of observations is $incrementalNum
 
 	rsTSList=$(echo $tsList | sed "s/ / @"$mapset"/g")
-	# rsTSList=$(echo $tsList | sed "s/ /,/g")
+	rsTSList=$(echo $tsList | sed "s/ /,/g")
 	echo new name is $rsTSList
 	# #creates a sum of all the years
 	r.series input=$rsTSList output=CHIRPS_sum_"$StartYear"_"$EndYear"_"$eachMonth" method=sum
@@ -119,6 +119,9 @@ do
 	r.mapcalculator amap=CHIRPS_sum_"$StartYear"_"$EndYear"_"$eachMonth" formula="A/$incrementalNum" outfile=CHIRPS_avg_"$StartYear"_"$EndYear"_"$eachMonth"
 	r.out.gdal input=CHIRPS_avg_"$StartYear"_"$EndYear"_"$eachMonth"@"$mapset" output=$OutputDir/CHIRPS_avg_"$StartYear"_"$EndYear"_"$eachMonth".tif
 	chmod 775 $OutputDir/CHIRPS_avg_"$StartYear"_"$EndYear"_"$eachMonth".tif
+
+	# remove monthly rasters from mapset
+	g.remove rast=$rsTSList	
 
 done
 
