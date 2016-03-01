@@ -118,7 +118,7 @@ This script calculates the time series average, standard deviation, and variance
 **Example Command:**
 
 ```
-/data4/afsisdata/USGS_updates/scripts/./albedo_geoprocessing.sh /data4/afsisdata/USGS_updates/albedo/regions/africa BSA_vis sinusoidal albedo
+/data4/afsisdata/USGS_updates/scripts/./albedo_ts.sh /data4/afsisdata/USGS_updates/albedo/regions/africa BSA_vis sinusoidal albedo
 ```
 
 **Parameters**

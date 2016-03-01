@@ -1,11 +1,11 @@
 #!/bin/bash
-#albedo_geoprocessing.sh
+#albedo_ts.sh
 ## This script calculates average, standard deviation, and variance in GRASS GIS for the MODIS Albedo data product.
 #Written by Sonya Ahamed, modified by Kimberly Peng
 #Last modified: 2015
 
 #Sample Command: 
-#/data4/afsisdata/USGS_updates/scripts/./albedo_geoprocessing.sh /data2/afsisdata/MODIS/Albedo_WSA_shortwave/geotiffs WSA_shortwave sinusoidalSA kpeng
+#/data4/afsisdata/USGS_updates/scripts/./albedo_ts.sh /data2/afsisdata/MODIS/Albedo_WSA_shortwave/geotiffs WSA_shortwave sinusoidalSA kpeng
 
 InputDir=$1
 DatasetName=$2
